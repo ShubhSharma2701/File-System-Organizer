@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "figlet": "^1.5.2"
+  },
+  "name": "webdev",
+  "version": "1.0.0",
+  "main": "input.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "" ,
+  "bin": {
+    "run1project" :"input.js" 
+  }
+}
