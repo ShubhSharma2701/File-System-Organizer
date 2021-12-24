@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-let ans=  process.argv.slice(2); //jis index se slice use kia h uske aage se print krega sirf 
+let ans=  process.argv.slice(2); //printing from 2nd idx onwards bcoz user gives i/p generally form 2nd idx
 const { dirxml } = require("console");
-//hmne 2nd idx se islie lia kyuki generally user 2nd idx se hi i/p deta h 1st idx p file ka name etc hota h
 let fs= require("fs");
 let path= require("path");
-let helpObj= require("./commands/help")  // hmne module se export krakr as an object yahan  call krdia actual fn
-let treeObj= require("./commands/tree")  //ye sb paths hain bracket m jo js files bnai hain fns ki
+let helpObj= require("./commands/help")  // exported from module by giving path as object
+let treeObj= require("./commands/tree") 
 let organizeObj= require("./commands/organize")
 //console.log(ans);
     
@@ -13,7 +12,7 @@ let organizeObj= require("./commands/organize")
 //node input.js organize "directory path"
 //node input.js help
 let command= ans[0]; 
-let types= {   //as an object hmne different types of file formats bnalie array m
+let types= {   //different file formats such as pdf, docs,exe created as an object in an array(oops applied)
     media : ["mp4","mkv"],
     archives : ['zip', '7z','rar','tar', 'gz','ar', 'iso',"xz"],
     documents: ['docs','doc', 'pdf','xlsx', 'xls','odt','ods','odp','odg','odf','txt','ps','tex'],
@@ -21,7 +20,7 @@ let types= {   //as an object hmne different types of file formats bnalie array 
 }
 switch(command){
     case "tree":
-        treeObj.treeKey(ans[1]); //module m jo keys refer krri hain objectfn ko unhecall lgadia
+        treeObj.treeKey(ans[1]); //modules called which were referred as keys
     break;
 case "organize":
     organizeObj.organizeKey(ans[1]);
